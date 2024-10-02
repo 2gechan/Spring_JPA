@@ -17,7 +17,7 @@ public class ItemRepository {
         if (item.getId() == null) {
             em.persist(item);
         } else {
-            // update?
+            // id가 있는 객체이면 수정으로 판단하여 merge(병합)
             em.merge(item);
         }
     }
