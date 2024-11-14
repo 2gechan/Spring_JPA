@@ -1,5 +1,7 @@
 package hellojpa;
 
+import hellojpa.jpashop.domain.Book;
+import hellojpa.jpashop.domain.Item;
 import hellojpa.jpashop.domain.Member;
 import jakarta.persistence.*;
 
@@ -16,6 +18,12 @@ public class JpaMain {
         tx.begin();
 
         try {
+            Book book = new Book();
+            book.setName("JPA");
+            book.setAuthor("Kim");
+
+            em.persist(book);
+
             tx.commit();
         } catch (Exception e) {
             tx.rollback();
