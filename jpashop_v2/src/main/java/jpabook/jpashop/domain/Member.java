@@ -1,5 +1,6 @@
 package jpabook.jpashop.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -21,6 +22,7 @@ public class Member {
     @Embedded
     private Address address;
 
+    @JsonIgnore // rest api에서 회원 조회 시 order는 빠지게된다
     @OneToMany(mappedBy = "member")
     private List<Order> order = new ArrayList<>();
 
