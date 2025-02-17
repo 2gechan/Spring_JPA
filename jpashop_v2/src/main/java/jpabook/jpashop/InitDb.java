@@ -17,6 +17,7 @@ public class InitDb {
     @PostConstruct
     public void init() {
         initService.dbInit1();
+        initService.dbInit2();
     }
 
     @Component
@@ -33,7 +34,7 @@ public class InitDb {
             em.persist(book1);
 
             Book book2 = createBook("jpa2", 20000, 200);
-            em.persist(book1);
+            em.persist(book2);
 
             OrderItem orderItem1 = OrderItem.createOrderItem(book1, 10000, 1);
             OrderItem orderItem2 = OrderItem.createOrderItem(book2, 20000, 2);
@@ -52,7 +53,7 @@ public class InitDb {
             em.persist(book1);
 
             Book book2 = createBook("spring2", 40000, 300);
-            em.persist(book1);
+            em.persist(book2);
 
             OrderItem orderItem1 = OrderItem.createOrderItem(book1, 20000, 3);
             OrderItem orderItem2 = OrderItem.createOrderItem(book2, 40000, 4);
